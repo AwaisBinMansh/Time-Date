@@ -46,34 +46,34 @@ const clock = document.querySelector('.clock');
 
  //////////////////////////////////////////Digital Clock ////////////////////
 
-// const tick = ()=>{
-//     const now = new Date();
-
-//     let h = now.getHours();
-//     let m = now.getMinutes();
-//     let s = now .getSeconds();
-//     let sesion = "AM";
-//    if(h==0){
-//        h == 12;
-//        sesion = "AM";
-//    }
-//    if(h>12)
-//    {
-//         h = h-12;
-//         sesion = "PM";
-//    }
-//     console.log(h,m,s);
-
-//     const html = 
-//     `<span>${h}</span> :
-//      <span>${m}</span> :
-//      <span>${s}</span>
-//      <span>${sesion}</span>
-//     `
-//     clock.innerHTML=html;
-
-// }
-// setInterval(tick,1000);
+const tick = ()=>{
     const now = new Date();
 
-    console.log(dateFns.isToday(now));
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now .getSeconds();
+    let sesion = "AM";
+   if(h==12){
+       h =12;
+       sesion = "PM";
+   }
+   if(h>12)
+   {
+        h = h-12;
+        sesion = "AM";
+   }
+    console.log(h,m,s);
+
+    const html = 
+    `<span>${h}</span> :
+     <span>${m}</span> :
+     <span>${s}</span>
+     <span>${sesion}</span>
+    `
+    clock.innerHTML=html;
+
+}
+setInterval(tick,1000);
+   //  const now = new Date();
+
+   //  console.log(dateFns.isToday(now));
